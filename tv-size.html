@@ -1,0 +1,54 @@
+<h3>TV dimensions</h3>
+<div class="row">
+<div class="col-xs-offset-2 col-xs-2">CM</div>
+<div class="col-xs-2">IN</div>
+</div>
+
+<form role="form" class="form-horizontal">
+  <div class="form-group">
+    <label for="height" class="control-label col-xs-2">Height:</label>
+    <div class="col-xs-2">
+      <input type="number" id="height" class="form-control"
+             ng-model="tv.cm.height" ng-change="resize({'height':tv.cm.height})"/>
+    </div>
+    <div class="col-xs-2">
+      <input type="number" id="in-height" class="form-control"
+             ng-model="tv.in.height" ng-change="resize({'height': tv.in.height}, 'in')"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="width" class="control-label col-xs-2">Width:</label>
+    <div class="col-xs-2">
+      <input type="number" id="width" class="form-control"
+             ng-model="tv.cm.width" ng-change="resize({'width': tv.cm.width})"/>
+    </div>
+    <div class="col-xs-2">
+      <input type="number" id="" class="form-control"
+             ng-model="tv.in.width"
+             ng-change="resize({'width': tv.in.width}, 'in')" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="diagonal" class="control-label col-xs-2">Diagonal:</label>
+    <div class="col-xs-2">
+      <input type="number" id="diagonal" class="form-control"
+             ng-model="tv.cm.diagonal" ng-change="resize({'diagonal': tv.cm.diagonal})"/>
+    </div>
+    <div class="col-xs-2">
+      <input type="number" id="in-diagonal" class="form-control"
+             ng-model="tv.in.diagonal"
+             ng-change="resize({'diagonal': tv.in.diagonal}, 'in')"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="shape" class="col-xs-2 control-label">Shape:</label>
+    <div class="col-xs-4">
+      <select name="shape" id="shape" class="form-control"
+              ng-model=tv.shape ng-change="resize({'shape': tv.shape})">
+        <option ng-value="{w:16, h:9}" ng-selected="true">16:9</option>
+        <option ng-value="{w:4, h:3}">4:3</option>
+      </select>
+    </div>
+  </div>
+</form>
+<div id="chart"></div>
